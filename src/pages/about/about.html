@@ -1,11 +1,37 @@
+
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
+    <ion-title>Lista de Carros</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
+  <ion-list>
 
+    <ion-item>
+      <ion-label floating>Nome do carro</ion-label>
+      <ion-input type="text" autofocus [(ngModel)]="nome"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>tipo</ion-label>
+      <ion-input type="text" [(ngModel)]="tipo"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>modelo</ion-label>
+      <ion-input type="text" [(ngModel)]="modelo"></ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <div padding>
+    <button ion-button color="primary" (click)="ListaCarros()"block >localizar</button>
+  </div>
+  <div class="hr mb-5"></div>
+     <ion-item-group *ngFor="let details of details">
+        <ion-item-divider color="light">{{details.nome}}</ion-item-divider>
+         <ion-item>{{details.tipo}}</ion-item>
+        <ion-item>{{details.modelo}}</ion-item>
+        
+      </ion-item-group>
+  
 </ion-content>
