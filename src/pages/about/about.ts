@@ -6,15 +6,13 @@ import { CarDetailsProvider } from '../../providers/car-details/car-details';
 @IonicPage()
 @Component({
   selector: 'page-about',
-  templateUrl: 'about.html'
+  templateUrl: 'about.html',
   providers:[
     CarDetailsProvider
   ]
 })
-export class CorreiosPage {
+export class AboutPage {
   nome:string;
-  tipo:string;
-  modelo:string;
 
   details = [];
 
@@ -26,8 +24,8 @@ export class CorreiosPage {
   }
 
   ListaCarros(){
-    if ((this.nome.length => 2) && (this.tipo.length >= 3) && (this.modelo.length >= 3)){
-      this.cProvider.listaCarros(this.nome, this.tipo, this.modelo).subscribe(
+    if (this.nome.length >= 2){
+      this.cProvider.callService(this.nome,).subscribe(
         data=>{
             let resultado = (data as any)._body;
             let resultadoJason = JSON.parse(resultado);
