@@ -1,0 +1,13 @@
+
+    <ion-item>
+      <ion-label floating>tipo</ion-label>
+      <ion-input type="text" [(ngModel)]="tipo"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>modelo</ion-label>
+      <ion-input type="text" [(ngModel)]="modelo"></ion-input>
+    </ion-item>
+  </ion-list>
+   <ion-item>{{details.tipo}}</ion-item>
+        <ion-item>{{details.modelo}}</ion-item>
